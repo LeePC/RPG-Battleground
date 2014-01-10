@@ -1,0 +1,17 @@
+name: RPG Quest Manager
+main: rpgQuestManager.RPG_QuestManager
+version: 0.6.54
+description: >
+             Manages the quests on the server.
+depend: [RPG Core]
+commands:
+  quest:
+    description: Manages the quests on the server.
+  quests:
+    description: Alias to 'quest'.
+  q:
+    description: Alias to 'quest'.
+  journal:
+    description: Displays your current and completed quests.
+  j:
+    description: Alias to 'journal'.

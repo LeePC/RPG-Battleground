@@ -1,0 +1,9 @@
+name: RPG Core
+main: rpgCore.RPG_Core
+version: 0.7.116
+description: >
+             Core MMORPG functions.
+depend: [Vault]
+commands:
+  rpg:
+    description: Manages the RPG functions on the server.

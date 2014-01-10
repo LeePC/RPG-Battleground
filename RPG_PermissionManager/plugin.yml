@@ -1,0 +1,9 @@
+name: RPG Permission Manager
+main: rpgPermissionManager.RPG_PermissionManager
+version: 0.2.39
+description: >
+             Manages the permissions on the server.
+depend: [RPG Core]
+commands:
+  pm:
+    description: Manages the RPG functions on the server.

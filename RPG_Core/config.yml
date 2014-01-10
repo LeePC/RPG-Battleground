@@ -1,0 +1,13 @@
+sqlFilesFolder: https://api.github.com/repos/MC-Story/MC-Story/contents/SQL%20Scripts/
+sqlFilesLocation: https://raw.github.com/MC-Story/MC-Story/master/SQL%20Scripts/Procedures/
+db_server: localhost
+db_port: 3306
+db_name: minecraft
+db_username: 'root'
+db_password: ''
+db_tbl_prefix: rpg_
+db_seperator: '!'
+db_seperator_2: ';'
+db_seperator_3: ','
+db_autoCreateMissingObjects: false
+txt_seperator: --------------------

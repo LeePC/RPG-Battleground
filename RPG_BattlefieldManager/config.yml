@@ -1,0 +1,5 @@
+defaultCaptureRadius: 0
+defaultCaptureTime: 0
+defaultFlagBlockMaterial: stone
+flagTickInterval: 40
+flagTowerHeight: 10

@@ -1,0 +1,59 @@
+name: RPG Chat Manager
+main: rpgChatManager.RPG_ChatManager
+version: 0.3.28
+description: >
+             Manages the chat on the server.
+depend: [RPG Core]
+commands:
+  s:
+    description: Talk in the server chat
+  worldoff:
+    description: Hide world chat messages
+  woff:
+    description: Hide world chat messages
+  worldon:
+    description: Show world chat messages
+  won:
+    description: Show world chat messages
+  w:
+    description: Talk in the world chat
+  nationoff:
+    description: Hide nation chat messages
+  noff:
+    description: Hide nation chat messages
+  nationon:
+    description: Show nation chat messages
+  non:
+    description: Show nation chat messages
+  n:
+    description: Talk in the nation chat
+  guildoff:
+    description: Hide guild chat messages
+  goff:
+    description: Hide guild chat messages
+  guildon:
+    description: Show guild chat messages
+  gon:
+    description: Show guild chat messages
+  g:
+    description: Talk in the guild chat
+  regionoff:
+    description: Hide region chat messages
+  roff:
+    description: Hide region chat messages
+  regionon:
+    description: Show region chat messages
+  ron:
+    description: Show region chat messages
+  r:
+    description: Talk in the region chat
+  privateoff:
+    description: Hide private chat messages
+  poff:
+    description: Hide private chat messages
+  privateon:
+    description: Show private chat messages
+  pon:
+    description: Show private chat messages
+  p:
+    description: Talk to someone privately

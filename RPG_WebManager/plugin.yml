@@ -1,0 +1,13 @@
+name: RPG Web Manager
+main: rpgWebManager.RPG_WebManager
+version: 0.2.10
+description: >
+             Manages interaction with the web.
+depend: [RPG Core]
+commands:
+  web:
+    description: Manages interaction with the web.
+  password:
+    description: Manage the password for your web account.
+  pw:
+    description: Alias to "password"

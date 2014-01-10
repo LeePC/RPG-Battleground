@@ -1,0 +1,13 @@
+name: RPG World Manager
+main: rpgWorldManager.RPG_WorldManager
+version: 0.4.18
+description: >
+             Manages the different worlds on the server
+depend: [RPG Core]
+commands:
+  wm:
+    description: Manage the worlds on the server
+  world:
+    description: Alias to /wm
+  worlds:
+    description: Alias to /wm

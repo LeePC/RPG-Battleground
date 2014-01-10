@@ -1,0 +1,9 @@
+name: RPG NPC Manager
+main: rpgNpcManager.RPG_NpcManager
+version: 0.6.64
+description: >
+             Manages the NPCs on the server.
+depend: [RPG Core]
+commands:
+  npc:
+    description: Manages the NPC functions on the server.

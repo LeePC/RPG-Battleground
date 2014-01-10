@@ -1,0 +1,11 @@
+name: RPG Battlefield Manager
+main: rpgBattlefieldManager.RPG_BattlefieldManager
+version: 0.3.28
+description: >
+             Manages the combat within the battlefield.
+depend: [RPG Core]
+commands:
+  bf:
+    description: Alias to /bfm
+  bfm:
+    description: Battlefield Manager commands.
