@@ -3,31 +3,27 @@
 #Table of Content
 
 1. [Introduction](#introduction)
-    1. [Why Bukkit?](#ref_whybukkit)
-    1. [Why SpoutCraft?](#ref_whyspout)
-1. [Technical](#ref_tech)
-    1. [Versions](#ref_version)
-    1. [Supported Bukkit](#ref_suppbukkit)
+    1. [Why Bukkit?](#why-bukkit)
+    1. [Why SpoutCraft?](#why-spoutcraft)
+1. [Technical](#technical)
+    1. [Versions](#versions)
+    1. [Supported Bukkit](#supported-bukkit)
 
 #Introduction
 Welcome to the RPG plugin for Bukkit Minecraft servers.
 
-<a name="ref_whybukkit"></a>
 ##Why Bukkit?
 I wanted to create features for everyone that plays Minecraft, not just a partial group of players that runs a modded client.
 Creating this project as a mod would have required clients do download the mod on their computers before being able to play.
 This narrows down the amount of players that will join a server running the mod, and thus turning away new players that might have liked the RPG features.
 Bukkit gives server owners the ability to run servers with various plugins, without requiring the client to do anything.
 
-<a name="ref_whyspout"></a>
 ##Why SpoutCraft?
 These plugins support SpoutCraft because, as mentioned before, it still allows access to the broad community of people running the vanilla minecraft client.
 But, incase a client uses the SpoutCraft client, it gives the additional features such as custom interfaces.
 Again, this was a choice of adding functionality, without narrowing down the audience.
 
-<a name="ref_tech"></a>
 #Technical
-<a name="ref_versions"></a>
 ##Versions
 Below is the current newest version of every plugin. The plugins update themselves if the Update Manager is enabled on your server.
 
@@ -42,7 +38,6 @@ Below is the current newest version of every plugin. The plugins update themselv
  - Web Manager		0.2.10
  - World Manager	0.4.18
 
-<a name="ref_suppbukkit"></a>
 ##Supported Bukkit version
 These plugins were last developed and tested with
 
