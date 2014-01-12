@@ -3,7 +3,7 @@
 #Table of Content
 
 1. [Introduction](#introduction)
-    1. [What is RPG-Plugin?(#what-is-rpg-plugin)
+    1. [What is RPG-Plugin?](#what-is-rpg-plugin)
     1. [Why Bukkit?](#why-bukkit)
     1. [Why SpoutCraft?](#why-spoutcraft)
 1. [Technical](#technical)
