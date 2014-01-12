@@ -3,6 +3,7 @@
 #Table of Content
 
 1. [Introduction](#introduction)
+    1. [What is RPG-Plugin?(#what-is-rpg-plugin)
     1. [Why Bukkit?](#why-bukkit)
     1. [Why SpoutCraft?](#why-spoutcraft)
 1. [Technical](#technical)
@@ -11,6 +12,11 @@
 
 #Introduction
 Welcome to the RPG plugin for Bukkit Minecraft servers.
+
+##What is RPG-Plugin?
+RPG-Plugin is a collection of server plugins for a [Bukkit](http://bukkit.org) [Minecraft](http://minecraft.net) server.
+The plugins add common RPG functions, such as different nations, NPCs, Quests and Monsters to a Bukkit server.
+They also offer extended PvP functionality such as flags to capture and castles to siege.
 
 ##Why Bukkit?
 I wanted to create features for everyone that plays Minecraft, not just a partial group of players that runs a modded client.
