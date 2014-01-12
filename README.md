@@ -2,14 +2,13 @@
 
 #Table of Content
 
-1. [Introduction](#ref_intro)
+1. [Introduction](#introduction)
     1. [Why Bukkit?](#ref_whybukkit)
     1. [Why SpoutCraft?](#ref_whyspout)
 1. [Technical](#ref_tech)
     1. [Versions](#ref_version)
     1. [Supported Bukkit](#ref_suppbukkit)
 
-<a name="ref_intro"></a>
 #Introduction
 Welcome to the RPG plugin for Bukkit Minecraft servers.
 
