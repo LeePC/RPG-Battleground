@@ -1,9 +1,0 @@
-name: RPG Update Manager
-main: rpgUpdateManager.RPG_UpdateManager
-version: 0.2.22
-description: >
-             Manages automatic updating of the RPG plugins.
-depend: [RPG Core]
-commands:
-  um:
-    description: Manages updates of the RPG plugins.

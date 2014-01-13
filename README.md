@@ -6,6 +6,7 @@
     1. [What is RPG-Plugin?](#what-is-rpg-plugin)
     1. [Why Bukkit?](#why-bukkit)
     1. [Why SpoutCraft?](#why-spoutcraft)
+1. [Setup](#setup)
 1. [Technical](#technical)
     1. [Versions](#versions)
     1. [Supported Bukkit](#supported-bukkit)
@@ -29,6 +30,9 @@ These plugins support SpoutCraft because, as mentioned before, it still allows a
 But, incase a client uses the SpoutCraft client, it gives the additional features such as custom interfaces.
 Again, this was a choice of adding functionality, without narrowing down the audience.
 
+#Setup & Configuration
+Check the setup guide [here](https://github.com/Valandur/RPG-Plugin/wiki/Setup)
+
 #Technical
 ##Versions
 Below is the current newest version of every plugin. The plugins update themselves if the Update Manager is enabled on your server.
@@ -40,7 +44,6 @@ Below is the current newest version of every plugin. The plugins update themselv
  - NPC Manager		0.5.64
  - Permission Manager	0.2.39
  - Quest Manager	0.6.54
- - Update Manager	0.2.22
  - Web Manager		0.2.10
  - World Manager	0.4.18
 
