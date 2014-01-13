@@ -6,7 +6,7 @@
     1. [What is RPG-Plugin?](#what-is-rpg-plugin)
     1. [Why Bukkit?](#why-bukkit)
     1. [Why SpoutCraft?](#why-spoutcraft)
-1. [Setup](#setup)
+1. [Setup](##setup--configuration)
 1. [Technical](#technical)
     1. [Versions](#versions)
     1. [Supported Bukkit](#supported-bukkit)
