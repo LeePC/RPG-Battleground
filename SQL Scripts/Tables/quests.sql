@@ -3,7 +3,7 @@ CREATE TABLE `rpg_quests` (
   `NameId` int(11) NOT NULL DEFAULT '-1',
   `DisplayNameId` int(11) DEFAULT '-1',
   `DescriptionId` int(11) DEFAULT '-1',
-  `QuestType` int(11) DEFAULT '-1' COMMENT '0 = None, 1 = Bring, 2 = Kill, 3 = Talk',
+  `QuestType` int(11) DEFAULT '-1',
   `NPCStartId` int(11) DEFAULT '-1',
   `NPCEndId` int(11) DEFAULT '-1',
   `NPCStartTextId` int(11) DEFAULT '-1',
