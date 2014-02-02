@@ -13,4 +13,4 @@ CREATE TABLE `rpg_npctemplates` (
   `ArmorLegs` int(11) NOT NULL DEFAULT '-1',
   `ArmorFeet` int(11) NOT NULL DEFAULT '-1',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

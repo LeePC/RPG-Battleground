@@ -6,4 +6,4 @@ CREATE TABLE `rpg_nations` (
   `Money` int(11) NOT NULL DEFAULT '0',
   `BlockMaterial` varchar(32) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

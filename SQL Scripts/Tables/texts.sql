@@ -4,4 +4,4 @@ CREATE TABLE `rpg_texts` (
   `EN` varchar(1024) DEFAULT '',
   `FR` varchar(1024) DEFAULT '',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
