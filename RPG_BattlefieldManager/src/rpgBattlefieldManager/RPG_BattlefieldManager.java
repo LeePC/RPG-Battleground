@@ -1095,7 +1095,7 @@ public class RPG_BattlefieldManager extends JavaPlugin implements Listener, RPG_
 				
 				ArrayList<RPG_OutpostBlock> blocks = new ArrayList<RPG_OutpostBlock>();
 				Statement stmt_blocks = RPG_Core.GetDatabaseStatement();
-				ResultSet rs_blocks = stmt_blocks.executeQuery("SELECT " + SQLTablePrefix + "outpostsblocks.ID, OutpostID, Type, Data, WorldName, PosX, PosY, PosZ FROM " + SQLTablePrefix + "outpostsblocks " +
+				ResultSet rs_blocks = stmt_blocks.executeQuery("SELECT " + SQLTablePrefix + "outpostsblocks.ID, OutpostID, Type, WorldName, PosX, PosY, PosZ FROM " + SQLTablePrefix + "outpostsblocks " +
 						"INNER JOIN " + SQLTablePrefix + "positions ON " + SQLTablePrefix + "outpostsblocks.PosID = " + SQLTablePrefix + "positions.ID " +
 						"INNER JOIN " + SQLTablePrefix + "worlds ON " + SQLTablePrefix + "positions.WorldID = " + SQLTablePrefix + "worlds.ID " + 
 						"WHERE OutpostID = " + rs.getInt(1) + ";");
@@ -1103,7 +1103,7 @@ public class RPG_BattlefieldManager extends JavaPlugin implements Listener, RPG_
 				while(rs_blocks.next())
 				{
 					Location loc = new Location(Bukkit.getServer().getWorld(rs_blocks.getString("WorldName")), rs_blocks.getDouble("PosX"), rs_blocks.getDouble("PosY"), rs_blocks.getDouble("PosZ"));
-					blocks.add(new RPG_OutpostBlock(rs_blocks.getInt(1), rs_blocks.getInt("OutpostID"), rs_blocks.getInt("Type"), rs_blocks.getByte("Data"), loc));
+					blocks.add(new RPG_OutpostBlock(rs_blocks.getInt(1), rs_blocks.getInt("OutpostID"), rs_blocks.getString("Type"), loc));
 				}
 				
 				outposts.put(rs.getInt(1), new RPG_Outpost(rs.getInt(1), rs.getInt("NameID"), reg, rs.getInt("FlagID"), blocks));

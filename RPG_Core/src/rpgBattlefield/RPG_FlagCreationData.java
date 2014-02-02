@@ -1,7 +1,5 @@
 package rpgBattlefield;
 
-import org.bukkit.Location;
-
 public class RPG_FlagCreationData
 {
 	public String Name;

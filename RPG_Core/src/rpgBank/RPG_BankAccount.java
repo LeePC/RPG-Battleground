@@ -10,9 +10,9 @@ import rpgPlayer.RPG_Player;
 public class RPG_BankAccount
 {
 	private int id;
-	private int playerid;
+	private int playerId;
 	private int gold;
-	private HashMap<Integer, ItemStack> items = new HashMap<Integer, ItemStack>();
+	private HashMap<String, ItemStack> items = new HashMap<String, ItemStack>();
 	
 	public int GetID()
 	{
@@ -20,53 +20,53 @@ public class RPG_BankAccount
 	}
 	public int GetPlayerID()
 	{
-		return playerid;
+		return playerId;
 	}
 	public int GetGold()
 	{
 		return gold;
 	}
-	public HashMap<Integer, ItemStack> GetItems()
+	public HashMap<String, ItemStack> GetItems()
 	{
 		return items;
 	}
 	
 	
-	public RPG_BankAccount(int ID, int PlayerID, int Gold, HashMap<Integer, ItemStack> Items)
+	public RPG_BankAccount(int id, int playerId, int gold, HashMap<String, ItemStack> items)
 	{
-		this.id = ID;
-		this.playerid = PlayerID;
-		this.gold = Gold;
-		this.items = Items;
+		this.id = id;
+		this.playerId = playerId;
+		this.gold = gold;
+		this.items = items;
 	}
 	
 	public RPG_Player GetPlayer()
 	{
-		return RPG_Core.GetPlayer(playerid);
+		return RPG_Core.GetPlayer(playerId);
 	}
 	
-	public void Deposit(ItemStack Stack)
+	public void Deposit(ItemStack stack)
 	{
-		int type = Stack.getTypeId();
+		String type = stack.getType().name();
 		
 		if (items.containsKey(type))
-			items.get(type).setAmount(items.get(type).getAmount() + Stack.getAmount());
+			items.get(type).setAmount(items.get(type).getAmount() + stack.getAmount());
 		else
-			items.put(type, Stack);
+			items.put(type, stack);
 	}
-	public ItemStack Withdraw(int TypeID)
+	public ItemStack Withdraw(int typeId)
 	{
-		if (items.containsKey(TypeID))
+		if (items.containsKey(typeId))
 		{
-			ItemStack stack = items.get(TypeID);
-			items.remove(TypeID);
+			ItemStack stack = items.get(typeId);
+			items.remove(typeId);
 			return stack;
 		}
 		
 		return null;
 	}
-	public int GetAmount(int TypeID)
+	public int GetAmount(int typeId)
 	{
-		return TypeID;
+		return typeId;
 	}
 }

@@ -1,6 +1,7 @@
 package rpgBattlefield;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 
 import rpgCore.RPG_Core;
 
@@ -8,8 +9,7 @@ public class RPG_OutpostBlock
 {
 	private int id;
 	private int outpostid;
-	private int type;
-	private byte data;
+	private String type;
 	private Location loc;
 	
 	public int GetID()
@@ -20,13 +20,9 @@ public class RPG_OutpostBlock
 	{
 		return outpostid;
 	}
-	public int GetType()
+	public String GetType()
 	{
 		return type;
-	}
-	public byte GetData()
-	{
-		return data;
 	}
 	public Location GetLocation()
 	{
@@ -34,13 +30,12 @@ public class RPG_OutpostBlock
 	}
 	
 	
-	public RPG_OutpostBlock(int ID, int OutpostID, int Type, byte Data, Location Loc)
+	public RPG_OutpostBlock(int id, int outpostId, String type, Location location)
 	{
-		this.id = ID;
-		this.outpostid = OutpostID;
-		this.data = Data;
-		this.type = Type;
-		this.loc = Loc;
+		this.id = id;
+		this.outpostid = outpostId;
+		this.type = type;
+		this.loc = location;
 	}
 	
 	public RPG_Outpost GetOutpost()
@@ -49,6 +44,6 @@ public class RPG_OutpostBlock
 	}
 	public void RecreateBlock()
 	{		
-		loc.getBlock().setTypeIdAndData(type, data, false);
+		loc.getBlock().setType(Material.getMaterial(type));
 	}
 }

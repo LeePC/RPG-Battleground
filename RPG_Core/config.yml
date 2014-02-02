@@ -1,5 +1,7 @@
-sqlFilesFolder: https://api.github.com/repos/MC-Story/MC-Story/contents/SQL%20Scripts/
-sqlFilesLocation: https://raw.github.com/MC-Story/MC-Story/master/SQL%20Scripts/Procedures/
+sqlFilesFolder: https://api.github.com/repos/Valandur/RPG-Battleground/contents/SQL%20Scripts/
+sqlFilesLocation: https://raw.github.com/Valandur/RPG-Battleground/master/SQL%20Scripts/
+db_type: sqlite
+db_fileName: rpg.db
 db_server: localhost
 db_port: 3306
 db_name: minecraft
@@ -9,5 +11,5 @@ db_tbl_prefix: rpg_
 db_seperator: '!'
 db_seperator_2: ';'
 db_seperator_3: ','
-db_autoCreateMissingObjects: false
+db_autoCreateMissing: false
 txt_seperator: --------------------

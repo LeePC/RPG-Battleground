@@ -91,6 +91,8 @@ public class RPG_Core extends JavaPlugin implements Listener
 	
 	private static Connection conn = null;
 	private static String SQLTablePrefix = null;
+	private static String db_type = "";
+	private static String db_fileName = "";
 	private static String db_server = null;
 	private static String db_port = null;
 	private static String db_name = null;
@@ -222,6 +224,8 @@ public class RPG_Core extends JavaPlugin implements Listener
 		
 		getConfig().addDefault("sqlFilesFolder", "https://api.github.com/repos/MC-Story/MC-Story/contents/SQL%20Scripts/");
 		getConfig().addDefault("sqlFilesLocation", "https://raw.github.com/MC-Story/MC-Story/master/SQL%20Scripts/");
+		getConfig().addDefault("db_type", "sqlite");
+		getConfig().addDefault("db_fileName", "rpg.db");
 		getConfig().addDefault("db_server", "localhost");
 		getConfig().addDefault("db_port", 3306);
 		getConfig().addDefault("db_name", "minecraft");
@@ -238,6 +242,8 @@ public class RPG_Core extends JavaPlugin implements Listener
 		
 		sqlFilesFolder = getConfig().getString("sqlFilesFolder");
 		sqlFilesLocation = getConfig().getString("sqlFilesLocation");
+		db_type = getConfig().getString("db_type");
+		db_fileName = getConfig().getString("db_fileName");
 		db_server = getConfig().getString("db_server");
 		db_port = getConfig().getString("db_port");
 		db_name = getConfig().getString("db_name");
@@ -588,10 +594,21 @@ public class RPG_Core extends JavaPlugin implements Listener
 		
 		try
 		{
-			conn = DriverManager.getConnection("jdbc:mysql://" + db_server + ":" + db_port + "/" + db_name + "?user=" + db_un + "&password=" + db_pw);
-			
+			if (db_type.equalsIgnoreCase("mysql"))
+			{
+				conn = DriverManager.getConnection("jdbc:mysql://" + db_server + ":" + db_port + "/" + db_name + "?user=" + db_un + "&password=" + db_pw);
+			}
+			if (db_type.equalsIgnoreCase("sqlite"))
+			{
+				Class.forName("org.sqlite.JDBC");	// Prepare the sqlite db driver
+				conn = DriverManager.getConnection("jdbc:sqlite:" + db_fileName);
+			}
+			else
+			{
+				logger.severe(prefix + "  Invalid database type!");
+				return false;
+			}
 			logger.info(prefix + "  Connected to database!");
-			
 			return true;
 		}
 		catch (Exception ex)
@@ -615,10 +632,12 @@ public class RPG_Core extends JavaPlugin implements Listener
 		{
 			stmt = conn.createStatement();
 			JSONParser p = new JSONParser();
-			
-			logger.info(prefix + "  Checking procedures...");
+			JSONArray list;
 			int oks = 0;
-			JSONArray list = (JSONArray)p.parse(GetStringFromWebsite(sqlFilesFolder + "Procedures/"));
+			
+			/*logger.info(prefix + "  Checking procedures...");
+			oks = 0;
+			list = (JSONArray)p.parse(GetStringFromWebsite(sqlFilesFolder + "Procedures/"));
 			for (int i = 0; i < list.size(); i++)
 			{
 				JSONObject obj = (JSONObject)list.get(i);
@@ -649,7 +668,7 @@ public class RPG_Core extends JavaPlugin implements Listener
 			}
 			logger.info(prefix + "  " + oks + "/" + list.size() + " procedures are OK!");
 			
-			stmt.clearBatch();
+			stmt.clearBatch();*/
 			
 			logger.info(prefix + "  Checking tables...");
 			oks = 0;
@@ -661,14 +680,29 @@ public class RPG_Core extends JavaPlugin implements Listener
 				
 				try
 				{
-					rs = stmt.executeQuery("SHOW TABLES LIKE '" + name + "'");
-					if (!rs.first())
+					if (db_type.equalsIgnoreCase("sqlite"))
+						rs = stmt.executeQuery("SELECT * FROM sqlite_master WHERE (type='table' AND name LIKE '" + name + "');");
+					else
+						rs = stmt.executeQuery("SHOW TABLES LIKE '" + name + "';");
+					
+					if (!rs.next())
 					{
 						if (autoCreateMissing)
 						{
 							logger.info(prefix + "    Creating '" + name + "'...");
 							
 							String[] queries = GetStringFromWebsite(sqlFilesLocation + "Tables/" + obj.get("name")).split("(\\s*;\\s*)+");
+							
+							for (int j = 0; j < queries.length; j++)
+							{
+								if (db_type.equalsIgnoreCase("sqlite"))
+								{
+									queries[j] = queries[j].replaceAll("AUTO_INCREMENT", "");
+									queries[j] = queries[j].replaceAll("ENGINE=InnoDB DEFAULT CHARSET=latin1", "");
+									queries[j] = queries[j].replaceAll("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP", "CURRENT_TIMESTAMP");
+								}
+								logger.info(queries[j]);
+							}
 							
 							if (queries.length == 1)
 								stmt.executeUpdate(queries[0]);
